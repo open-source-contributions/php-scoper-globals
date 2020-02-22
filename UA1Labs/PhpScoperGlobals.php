@@ -44,7 +44,7 @@ class PhpScoperGlobals
     {
         $namespace = self::getScopedNamespace();
         if ($namespace) {
-            if (!\class_exists($namespace . '\\', '', $className)) {
+            if (!\class_exists($namespace . '\\' . $className)) {
                 $alias = \str_replace($namespace . '\\', '', $className);
                 if (\class_exists($alias) || \interface_exists($alias)) {
                     \class_alias($className, $alias, \false);
