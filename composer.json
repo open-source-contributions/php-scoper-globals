@@ -1,6 +1,6 @@
 {
     "name": "ua1-labs/php-scoper-globals",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "description": "A library that adds the capability to scope external global functions into our PHP project scoped with humbug/php-scoper.",
     "type": "library",
     "license": "MIT",
@@ -13,7 +13,8 @@
     "minimum-stability": "dev",
     "prefer-stable": true,
     "require": {
-        "humbug/php-scoper": "0.*"
+        "humbug/php-scoper": "0.*",
+        "ua1-labs/php-scoper-globals": "1.*"
     },
     "autoload": {
         "psr-4": {
