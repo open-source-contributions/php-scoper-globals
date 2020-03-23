@@ -22,9 +22,12 @@
 function globalIncludes($globalIncludes)
 {
     return function ($filePath, $prefix, $content) use ($globalIncludes): string {
-        // don't prefix native wp functions
         foreach($globalIncludes as $include) {
-            $content = str_replace('\\' . $prefix . '\\' . $include . '(', '\\' . $include . '(', $content);
+            $tokens = [
+                '\\' . $prefix . '\\' . $include,
+                $prefix . '\\' . $include
+            ];
+            $content = str_replace($tokens, '\\' . $include, $content);
         }
         return $content;
     };
